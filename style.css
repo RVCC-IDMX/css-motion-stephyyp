@@ -22,16 +22,23 @@
   --card-width: 400px;
   --card-height: 500px;
 
-  /* Color system */
-  --color-bg: #f5f7fa;
-  --color-surface: #ffffff;
-  --color-surface-subtle: #f0f4f7;
-  --color-primary: #2c4b42;
-  --color-primary-soft: #87f5d6;
-  --color-accent: #c2f587;
-  --color-text: #1f2933;
-  --color-text-muted: #6b7280;
-  --color-border: #d1d5db;
+  /* Color system - using hsl() format */
+  --color-bg: hsl(216, 33%, 97%);
+  --color-surface: hsl(0, 0%, 100%);
+  --color-surface-subtle: hsl(204, 28%, 95%);
+  --color-primary: hsl(163, 30%, 23%);
+  --color-primary-soft: hsl(161, 86%, 75%);
+  --color-accent: hsl(86, 85%, 74%);
+  --color-text: hsl(209, 28%, 16%);
+  --color-text-muted: hsl(220, 9%, 46%);
+  --color-border: hsl(216, 12%, 84%);
+
+  /* Additional colors for inline values */
+  --color-primary-dark: hsl(160, 28%, 27%);
+  --color-light: hsl(0, 0%, 100%);
+  --color-gradient-start: hsl(175, 41%, 91%);
+  --color-shadow-light: hsla(222, 47%, 11%, 0.08);
+  --color-shadow-medium: hsla(222, 47%, 11%, 0.15);
 
   /* Typography */
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -70,7 +77,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  background: radial-gradient(circle at top left, #e0f2f1 0, var(--color-bg) 40%);
+  background: radial-gradient(circle at top left, var(--color-gradient-start) 0, var(--color-bg) 40%);
   color: var(--color-text);
 }
 
@@ -122,7 +129,7 @@ main {
   background-color: var(--color-surface);
   border-radius: 1rem;
   border: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px var(--color-shadow-light);
 }
 
 .motion-section h2 {
@@ -151,8 +158,8 @@ main {
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-primary), #345f52);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-light);
   font-size: var(--font-size-base);
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -294,7 +301,7 @@ main {
 
   border-radius: 1rem;
   background-color: var(--color-surface);
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 14px 35px var(--color-shadow-medium);
 }
 
 .card-face h3 {
@@ -378,7 +385,7 @@ footer {
   margin-top: auto;
   text-align: center;
   border-top: 1px solid var(--color-border);
-  background-color: #ffffff;
+  background-color: var(--color-surface);
 }
 
 footer p {
